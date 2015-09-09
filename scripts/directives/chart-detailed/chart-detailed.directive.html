@@ -1,0 +1,21 @@
+<!-- Chart detailed directive -->
+<div class="row">
+  <h4 class="col-sm-8 title state-title"> {{ chart.title }} <small class="date" dir="ltr">{{ chart.dateRange }}</small></h4>
+  <div class="col-sm-4 form-inline">
+
+    <chart-detailed-date-picker reference-date="chart.referenceDate" show-compare-chart="chart.hasExtraChart" show-compare-chart-button="!chart.isCompareChart"></chart-detailed-date-picker>
+
+  </div>
+</div>
+
+<div class="row detailed-chart">
+
+  <chart-pie-compare summary="chart.summary" options="chart.pieOptions"></chart-pie-compare>
+
+  <div class="usage-chart-container">
+
+    <chart-electricity-compare electricity="chart.electricity" compareCollection="chart.compareCollection" options="chart.options" summary="chart.summary"></chart-electricity-compare>
+
+  </div>
+
+</div>
