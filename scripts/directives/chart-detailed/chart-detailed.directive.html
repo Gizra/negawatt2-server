@@ -14,8 +14,16 @@
 
   <div class="usage-chart-container">
 
-    <chart-electricity-compare electricity="chart.electricity" compare-collection="chart.compareCollection" options="chart.options" summary="chart.summary"></chart-electricity-compare>
+    <chart-electricity-compare electricity="chart.electricity" sensor-data="chart.sensorData" options="chart.options" summary="chart.summary"></chart-electricity-compare>
 
+  </div>
+
+  <div class="usage-normalization col-sm-8" ng-show="chart.normalizationFactors.length > 0">
+    נירמול על-פי:
+    <span ng-repeat="item in chart.normalizationFactors">
+      <input ng-change="chart.selectNormalization(item)" ng-model="item.selected" type="checkbox" id="check-normalization-{{item.title}}" class="ng-pristine ng-valid ng-touched">
+      {{ item.title }}
+    </span>
   </div>
 
 </div>
